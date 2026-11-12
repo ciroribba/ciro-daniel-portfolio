@@ -1,5 +1,5 @@
 export const profile = {
-  name: 'Ciro Ribba',
+  name: 'Ciro Zeballo Ribba',
   fullName: 'Ciro Daniel Zeballo Ribba',
   role: 'Senior Frontend Engineer',
   location: 'Córdoba, Argentina',
