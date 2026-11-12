@@ -24,7 +24,7 @@ export function SiteLayout({
           <header className="site-header">
             <div className="header-inner">
               <Link className="brand" href={home} aria-label={copy.home}>
-                cr<span aria-hidden="true">.</span>
+                cd<span aria-hidden="true">.</span>
               </Link>
               <div className="header-actions">
                 <Navigation
@@ -54,7 +54,7 @@ export function SiteLayout({
           <footer className="site-footer">
             <div>
               <Link href={home} className="footer-name">
-                Ciro Ribba<span>.</span>
+                Ciro Zeballo Ribba<span>.</span>
               </Link>
               <p>
                 Frontend Engineering & Architecture

@@ -1,7 +1,7 @@
 const es = {
   shell: {
     skip: 'Saltar al contenido',
-    home: 'Ciro Ribba, inicio',
+    home: 'Ciro Zeballo Ribba, inicio',
     theme: 'Cambiar tema claro u oscuro',
     newTab: '(nueva pestaña)',
     about: 'Conocer mi recorrido →',
@@ -110,7 +110,7 @@ const es = {
 const en = {
   shell: {
     skip: 'Skip to content',
-    home: 'Ciro Ribba, home',
+    home: 'Ciro Zeballo Ribba, home',
     theme: 'Toggle light or dark theme',
     newTab: '(opens in a new tab)',
     about: 'About my work →',
