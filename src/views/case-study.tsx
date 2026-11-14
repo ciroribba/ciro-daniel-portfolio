@@ -2,29 +2,31 @@ import { localizedPath, type Locale } from '@/i18n/routing';
 import { ui } from '@/i18n/ui';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getProjects } from '@/content/projects';
-import { getCaseStudy } from '@/features/projects/case-study-registry';
+import { getExperiences } from '@/content/experience';
+import { getCaseStudy } from '@/features/experience/case-study-registry';
+
 export function CaseStudy({ slug, locale }: { slug: string; locale: Locale }) {
-  const project = getProjects(locale).find((p) => p.slug === slug);
+  const experience = getExperiences(locale).find((p) => p.slug === slug);
   const content = getCaseStudy(slug, locale);
-  if (!project || !content) notFound();
+  if (!experience || !content) notFound();
   const copy = ui[locale].caseStudy;
+
   return (
     <>
       <Link
         className="text-link back-link"
-        href={localizedPath(locale, '/projects')}
+        href={localizedPath(locale, '/experience')}
       >
         {copy.back}
       </Link>
       <header className="page-heading">
         <p className="eyebrow">
-          {ui[locale].projectCard[project.kind]} · {project.category}
+          {ui[locale].experienceCard[experience.kind]} · {experience.role} · {experience.company}
         </p>
-        <h1>{project.title}</h1>
-        <p className="lede">{project.summary}</p>
+        <h1>{experience.title}</h1>
+        <p className="lede">{experience.summary}</p>
         <ul className="tags">
-          {project.technologies.map((t) => (
+          {experience.technologies.map((t) => (
             <li key={t}>{t}</li>
           ))}
         </ul>

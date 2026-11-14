@@ -5,9 +5,10 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { profile } from '@/content/profile';
-import { technologies } from '@/features/projects/domain/project';
-import { ProjectCard } from '@/features/projects/components/project-card';
-import { getProjects } from '@/content/projects';
+import { technologies } from '@/features/experience/domain/experience';
+import { ExperienceCard } from '@/features/experience/components/experience-card';
+import { getExperiences } from '@/content/experience';
+
 export function Home({ locale }: { locale: Locale }) {
   const copy = editorial[locale].home;
   return (
@@ -19,7 +20,7 @@ export function Home({ locale }: { locale: Locale }) {
           <p className="hero-copy">{copy.heroDescription}</p>
           <div className="hero-actions">
             <Button asChild>
-              <Link href={localizedPath(locale, '/projects')}>
+              <Link href={localizedPath(locale, '/experience')}>
                 {copy.explore} <ArrowRight size={16} aria-hidden="true" />
               </Link>
             </Button>
@@ -48,22 +49,22 @@ export function Home({ locale }: { locale: Locale }) {
           </div>
         </dl>
       </section>
-      <section className="home-projects" aria-labelledby="featured-projects">
+      <section className="home-projects home-experience" aria-labelledby="featured-experience">
         <div className="section-heading">
-          <h2 id="featured-projects">{copy.practiceTitle}</h2>
-          <Link className="text-link" href={localizedPath(locale, '/projects')}>
+          <h2 id="featured-experience">{copy.practiceTitle}</h2>
+          <Link className="text-link" href={localizedPath(locale, '/experience')}>
             {copy.allProjects} <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </div>
-        <div className="project-list">
-          {getProjects(locale)
+        <div className="project-list experience-list">
+          {getExperiences(locale)
             .slice(0, 2)
-            .map((project) => (
-              <ProjectCard
-                key={project.slug}
-                project={project}
+            .map((item) => (
+              <ExperienceCard
+                key={item.slug}
+                experience={item}
                 locale={locale}
-                copy={ui[locale].projectCard}
+                copy={ui[locale].experienceCard}
                 heading="h3"
               />
             ))}

@@ -2,8 +2,9 @@ import { type Locale } from '@/i18n/routing';
 import { editorial } from '@/i18n/editorial';
 import { ui } from '@/i18n/ui';
 import { PageHeading } from '@/components/page-heading';
-import { ProjectExplorer } from '@/features/projects/components/project-explorer';
-import { getProjects } from '@/content/projects';
+import { ExperienceExplorer } from '@/features/experience/components/experience-explorer';
+import { getExperiences } from '@/content/experience';
+
 export function Technology({ locale }: { locale: Locale }) {
   const copy = editorial[locale].technology;
   return (
@@ -13,11 +14,11 @@ export function Technology({ locale }: { locale: Locale }) {
         title={copy.title}
         description={copy.description}
       />
-      <ProjectExplorer
-        projects={getProjects(locale)}
+      <ExperienceExplorer
+        experiences={getExperiences(locale)}
         locale={locale}
         copy={ui[locale].explorer}
-        cardCopy={ui[locale].projectCard}
+        cardCopy={ui[locale].experienceCard}
         showConcepts={true}
       />
     </>

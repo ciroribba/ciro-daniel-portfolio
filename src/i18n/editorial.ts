@@ -2,12 +2,12 @@ const es = {
   home: {
     heroDescription:
       'Diseño y construyo interfaces y arquitectura frontend para dashboards, herramientas internas y flujos de compra.',
-    explore: 'Explorar proyectos',
+    explore: 'Explorar experiencia',
     engineering: 'Cómo pienso la ingeniería',
     ecosystem: 'Tecnologías',
     location: 'Ubicación',
-    practiceTitle: 'Casos destacados',
-    allProjects: 'Todos los proyectos',
+    practiceTitle: 'Experiencia destacada',
+    allProjects: 'Toda la experiencia',
     perspective: 'Mi enfoque',
     perspectiveFirst: 'Una buena interfaz empieza',
     perspectiveSecond: 'antes del primer componente.',
@@ -66,7 +66,7 @@ const es = {
     delivery: 'Al entregar',
     deliveryDescription:
       'Escenarios de QA, validaciones ejecutadas, riesgos y próximos pasos.',
-    cases: 'Explorar casos en documentación',
+    cases: 'Explorar trayectoria y casos',
     principles: [
       [
         '01',
@@ -115,12 +115,19 @@ const es = {
       'La ingeniería frontend es mi especialidad principal. Ciencia de Datos e Inteligencia Artificial son las áreas con las que estoy ampliando esa mirada.',
     metadataTitle: 'Laboratorio de datos e IA',
   },
-  projects: {
-    eyebrow: 'PROJECTS',
+  experience: {
+    eyebrow: 'WORK EXPERIENCE',
     title: 'Trabajo, contexto y decisiones.',
     description:
-      'Casos basados en experiencias compartidas. Los detalles de alcance, evidencia y resultados pendientes están señalados en cada uno.',
-    metadataTitle: 'Proyectos',
+      'Trayectoria profesional y roles desempeñados. Cada caso detalla contexto operativo, arquitectura, tecnologías aplicadas y evidencia documentada.',
+    metadataTitle: 'Experiencia',
+  },
+  projects: {
+    eyebrow: 'WORK EXPERIENCE',
+    title: 'Trabajo, contexto y decisiones.',
+    description:
+      'Trayectoria profesional y roles desempeñados. Cada caso detalla contexto operativo, arquitectura, tecnologías aplicadas y evidencia documentada.',
+    metadataTitle: 'Experiencia',
   },
   technology: {
     eyebrow: 'TECHNOLOGY EXPLORER',
@@ -130,16 +137,17 @@ const es = {
     metadataTitle: 'Explorador de tecnologías',
   },
 };
+
 const en = {
   home: {
     heroDescription:
       'I design and build frontend interfaces and architecture for dashboards, internal tools and purchase flows.',
-    explore: 'Explore projects',
+    explore: 'Explore experience',
     engineering: 'My approach to engineering',
     ecosystem: 'Technologies',
     location: 'Location',
-    practiceTitle: 'Featured case studies',
-    allProjects: 'All projects',
+    practiceTitle: 'Featured experience',
+    allProjects: 'All experience',
     perspective: 'My approach',
     perspectiveFirst: 'A good interface starts',
     perspectiveSecond: 'before the first component.',
@@ -198,7 +206,7 @@ const en = {
     delivery: 'At handoff',
     deliveryDescription:
       'QA scenarios, completed checks, risks and next steps.',
-    cases: 'Explore case studies in progress',
+    cases: 'Explore professional experience',
     principles: [
       [
         '01',
@@ -247,12 +255,19 @@ const en = {
       'Frontend engineering is my main specialty. Data science and artificial intelligence are expanding how I approach it.',
     metadataTitle: 'Data Science & AI Lab',
   },
-  projects: {
-    eyebrow: 'PROJECTS',
+  experience: {
+    eyebrow: 'WORK EXPERIENCE',
     title: 'Work, context and decisions.',
     description:
-      'Case studies based on firsthand accounts. Each case identifies scope, evidence and results that are pending.',
-    metadataTitle: 'Projects',
+      'Professional background and technical roles. Each entry details operational context, architecture, applied technologies, and documented evidence.',
+    metadataTitle: 'Experience',
+  },
+  projects: {
+    eyebrow: 'WORK EXPERIENCE',
+    title: 'Work, context and decisions.',
+    description:
+      'Professional background and technical roles. Each entry details operational context, architecture, applied technologies, and documented evidence.',
+    metadataTitle: 'Experience',
   },
   technology: {
     eyebrow: 'TECHNOLOGY EXPLORER',
@@ -262,4 +277,5 @@ const en = {
     metadataTitle: 'Technology Explorer',
   },
 } satisfies typeof es;
+
 export const editorial = { es, en };

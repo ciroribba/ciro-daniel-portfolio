@@ -3,14 +3,14 @@ import AxeBuilder from '@axe-core/playwright';
 const routes = [
   '/',
   '/engineering/',
-  '/projects/',
+  '/experience/',
   '/technology/',
   '/credentials/',
   '/lab/',
   '/about/',
   '/en/',
   '/en/engineering/',
-  '/en/projects/',
+  '/en/experience/',
   '/en/technology/',
   '/en/credentials/',
   '/en/lab/',
@@ -35,7 +35,7 @@ for (const path of routes) {
 test('technology filter and case navigation', async ({ page }) => {
   await page.goto('/technology/');
   await page.getByRole('button', { name: 'Angular', exact: true }).click();
-  await expect(page.getByRole('status')).toHaveText('1 proyecto');
+  await expect(page.getByRole('status')).toHaveText('1 experiencia');
   await page.getByRole('link', { name: /Explorar otro modelo mental/ }).click();
   await expect(page).toHaveURL(/angular-learning/);
   await expect(
@@ -106,33 +106,33 @@ test('unknown route has a return path', async ({ page }) => {
 test('switches languages on a case and preserves the URL on reload', async ({
   page,
 }) => {
-  await page.goto('/projects/angular-learning/');
+  await page.goto('/experience/angular-learning/');
   await expect(page.locator('html')).toHaveAttribute('lang', 'es');
   const english = page.getByRole('link', { name: 'English', exact: true });
   await expect(english).toHaveAttribute(
     'href',
-    '/en/projects/angular-learning/',
+    '/en/experience/angular-learning/',
   );
   await english.focus();
   await page.keyboard.press('Enter');
-  await expect(page).toHaveURL(/\/en\/projects\/angular-learning\/$/);
+  await expect(page).toHaveURL(/\/en\/experience\/angular-learning\/$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(
     page.getByRole('heading', { name: 'Evidence pending' }),
   ).toBeVisible();
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     'href',
-    /\/en\/projects\/angular-learning\/$/,
+    /\/en\/experience\/angular-learning\/$/,
   );
   await expect(page.locator('link[hreflang="es"]')).toHaveAttribute(
     'href',
-    /\/projects\/angular-learning\/$/,
+    /\/experience\/angular-learning\/$/,
   );
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect(
-    page.getByRole('link', { name: '← All projects' }),
-  ).toHaveAttribute('href', '/en/projects/');
+    page.getByRole('link', { name: '← All experience' }),
+  ).toHaveAttribute('href', '/en/experience/');
   await page.getByRole('link', { name: 'Español', exact: true }).click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'es');
   await expect(
@@ -145,12 +145,12 @@ test('English filters use English copy and open English cases', async ({
 }) => {
   await page.goto('/en/technology/');
   await page
-    .getByRole('searchbox', { name: 'Search projects or concepts' })
+    .getByRole('searchbox', { name: 'Search by role, technology or context' })
     .fill('dependency injection');
-  await expect(page.getByRole('status')).toHaveText('1 project');
+  await expect(page.getByRole('status')).toHaveText('1 experience');
   await expect(
     page.getByRole('link', { name: /Exploring a different mental model/ }),
-  ).toHaveAttribute('href', '/en/projects/angular-learning/');
+  ).toHaveAttribute('href', '/en/experience/angular-learning/');
 });
 
 test('the language switch works without JavaScript', async ({

@@ -44,7 +44,7 @@ export function Engineering({ locale }: { locale: Locale }) {
             <p>{copy.deliveryDescription}</p>
           </article>
         </div>
-        <Link href={localizedPath(locale, '/projects')} className="text-link">
+        <Link href={localizedPath(locale, '/experience')} className="text-link">
           {copy.cases} →
         </Link>
       </section>

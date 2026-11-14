@@ -5,7 +5,7 @@ export const defaultLocale: Locale = 'es';
 export const sections = [
   '/',
   '/engineering',
-  '/projects',
+  '/experience',
   '/technology',
   '/credentials',
   '/lab',

@@ -293,7 +293,8 @@ em {
   margin-bottom: 12px;
   gap: 16px;
 }
-.project-row {
+.project-row,
+.experience-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(13rem, 22%);
   align-items: start;
@@ -735,45 +736,55 @@ em {
   font-size: 14px;
 }
 .hero-details .tags,
-.project-meta .tags {
+.project-meta .tags,
+.experience-meta .tags {
   margin-top: 6px;
 }
-.project-list {
+.project-list,
+.experience-list {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--card);
 }
-.project-list > * + * {
+.project-list > * + *,
+.experience-list > * + * {
   border-top: 1px solid var(--border);
 }
-.project-title {
+.project-title,
+.experience-title {
   margin: 4px 0 6px;
   font-size: 20px;
 }
-.project-title a {
+.project-title a,
+.experience-title a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   min-height: 28px;
 }
-.project-title svg {
+.project-title svg,
+.experience-title svg {
   flex-shrink: 0;
 }
-.project-title a:hover {
+.project-title a:hover,
+.experience-title a:hover {
   color: var(--primary);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-.project-summary {
+.project-summary,
+.experience-summary {
   max-width: 68ch;
   font-size: 14px;
   color: var(--muted-foreground);
 }
-.project-kind {
+.project-kind,
+.experience-kind {
   font-size: 14px;
   font-weight: 600;
 }
-.project-evidence {
+.project-evidence,
+.experience-evidence {
   font-size: 13px;
   color: var(--muted-foreground);
 }
@@ -864,7 +875,8 @@ em {
     gap: 16px;
     padding: 32px 0 24px;
   }
-  .project-row {
+  .project-row,
+.experience-row {
     grid-template-columns: minmax(0, 1fr);
     gap: 10px;
     padding: 14px;
