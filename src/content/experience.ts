@@ -1,151 +1,176 @@
 import type { Locale } from '@/i18n/routing';
 import type { WorkExperience } from '@/features/experience/domain/experience';
 
-// Experiences described by Ciro. Repository, scope and results remain unverified.
 export const experiences = [
   {
     slug: 'ticketing-checkout',
     kind: 'experience',
-    role: 'Frontend Engineer',
-    company: 'Live Events Platform',
-    period: '2023 – 2024',
-    title: 'Del evento al checkout.',
-    category: 'COMMERCE · FLUJOS TRANSACCIONALES',
+    role: 'Sr. Software Engineer',
+    company: 'ITTI / Tuti Digital',
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Zustand',
+      'Zod',
+      'shadcn/ui',
+      'GitHub Actions',
+    ],
+    period: 'oct. 2024 – actualidad',
+    title: 'Venta de entradas y checkout de eventos',
+    category: 'Venta de entradas',
     summary:
-      'Selección de entradas, carrito y checkout: una experiencia que exige coordinar reglas de negocio, formularios y estado.',
-    technologies: ['Next.js', 'React', 'TypeScript'],
+      'Desarrollé el flujo de compra para eventos deportivos y culturales, desde la selección de entradas y el carrito hasta la integración de medios de pago.',
     concepts: [
-      'Arquitectura por features',
-      'Estado de carrito',
-      'Formularios',
-      'Integración de APIs',
+      'SSR',
+      'Renderizado en el cliente',
+      'Estado del carrito',
+      'Integración de pagos',
     ],
-    highlights: [
-      'Arquitectura por features',
-      'Flujo transaccional',
-      'Validación de formularios',
-    ],
+    result: 'Reducción del 25 % en el tiempo hasta el primer byte (TTFB).',
     evidence: 'self-reported',
     repository: null,
-    result: null,
   },
   {
     slug: 'operations-backoffice',
     kind: 'experience',
-    role: 'Frontend Developer',
-    company: 'Financial & Operations Backoffice',
-    period: '2022 – 2023',
-    title: 'Operaciones con contexto.',
-    category: 'INTERNAL TOOLS · BACKOFFICE',
-    summary:
-      'Herramientas internas y dashboards para equipos contables, con foco en la lectura de información y los flujos operativos.',
-    technologies: ['React', 'TypeScript'],
-    concepts: [
-      'Dashboards',
+    role: 'Sr. Frontend Developer',
+    company: 'Disperso',
+    technologies: [
+      'React',
       'Redux Toolkit',
       'Ant Design',
-      'Documentación técnica',
+      'Ant Charts',
+      'Vitest',
+      'React Testing Library',
+      'Mock Service Worker',
+      'Burp Suite',
     ],
-    highlights: [
-      'Dashboards analíticos',
-      'Flujos operativos',
-      'Diseño de sistemas internos',
+    period: 'oct. 2023 – ago. 2024',
+    title: 'Seguimiento de pagos masivos y operaciones contables',
+    category: 'Pagos y backoffice',
+    summary:
+      'Desarrollé dashboards para una plataforma de pagos masivos y su backoffice contable. Los equipos podían filtrar por empresa y consultar transacciones completadas, pendientes y rechazadas.',
+    concepts: [
+      'Dashboards',
+      'Accesibilidad',
+      'Pruebas de frontend',
+      'Backend for Frontend',
     ],
+    result:
+      'Reducción del 30 % en reclamos de soporte tras mejoras de accesibilidad. La cobertura de pruebas del frontend superó el 85 %.',
     evidence: 'self-reported',
     repository: null,
-    result: null,
   },
   {
-    slug: 'angular-learning',
-    kind: 'learning',
-    role: 'Investigación y Desarrollo Frontend',
-    company: 'Especialización Técnica',
-    period: '2024',
-    title: 'Explorar otro modelo mental.',
-    category: 'APRENDIZAJE · ANGULAR',
-    summary:
-      'Una línea de aprendizaje práctico de Angular moderno: servicios, inyección de dependencias, signals y consumo de APIs.',
-    technologies: ['Angular', 'TypeScript'],
-    concepts: ['Signals', 'RxJS', 'Inyección de dependencias', 'HttpClient'],
-    highlights: [
-      'Signals y reactividad',
-      'Inyección de dependencias',
-      'Servicios desacoplados',
+    slug: 'kala',
+    kind: 'experience',
+    role: 'Sr. Frontend Developer',
+    company: 'Kala',
+    technologies: [
+      'React',
+      'TypeScript',
+      'Ant Design',
+      'Ant Design Charts',
+      'Redux Toolkit',
+      'Vitest',
+      'Amazon Cognito',
+      'Figma',
     ],
+    period: 'ago. 2022 – oct. 2023',
+    title: 'Formularios financieros de alta complejidad',
+    category: 'Interfaces financieras',
+    summary:
+      'Desarrollé y optimicé formularios de hasta 180 campos, con componentes complejos, carga de archivos y captura de imágenes. Junto con Diseño, acordamos usar los mismos componentes de Ant Design en Figma y en el frontend.',
+    concepts: [
+      'Formularios complejos',
+      'Componentes reutilizables',
+      'Caché de respuestas',
+    ],
+    result:
+      'El ciclo de desarrollo y pruebas hasta QA de estos formularios bajó de tres semanas a una.',
     evidence: 'self-reported',
     repository: null,
-    result: null,
+  },
+  {
+    slug: 'mendel',
+    kind: 'experience',
+    role: 'Frontend Developer',
+    company: 'Mendel',
+    technologies: [
+      'Angular',
+      'NG-Zorro',
+      'Ant Design Charts',
+      'Socket.IO',
+      'WebSockets',
+      'NGINX',
+    ],
+    period: 'oct. 2020 – ago. 2022',
+    title: 'Gestión de gastos corporativos y comprobantes',
+    category: 'Gastos corporativos',
+    summary:
+      'Desarrollé dashboards para consultar gastos por servicio y período, pantallas para configurar límites de tarjetas y flujos de validación de comprobantes para el backoffice.',
+    concepts: ['Dashboards', 'Comprobantes', 'Notificaciones en tiempo real'],
+    result: 'Reducción del 35 % en los tiempos operativos del backoffice.',
+    evidence: 'self-reported',
+    repository: null,
   },
 ] as const satisfies readonly WorkExperience[];
 
 const english = {
   'ticketing-checkout': {
-    role: 'Frontend Engineer',
-    company: 'Live Events Platform',
-    period: '2023 – 2024',
-    title: 'From event to checkout.',
-    category: 'COMMERCE · TRANSACTION FLOWS',
+    period: 'Oct 2024 – present',
+    title: 'Event ticketing and checkout',
+    category: 'Ticketing',
     summary:
-      'Ticket selection, cart and checkout bring together business rules, forms and state.',
+      'I built the purchase flow for sports and cultural events, from selecting tickets and building a cart to integrating payment methods.',
     concepts: [
-      'Feature-based architecture',
+      'SSR',
+      'Client-side rendering',
       'Cart state',
-      'Forms',
-      'API integration',
+      'Payment integration',
     ],
-    highlights: [
-      'Feature-based architecture',
-      'Transactional flow',
-      'Form validation',
-    ],
+    result: 'Reduced time to first byte (TTFB) by 25%.',
   },
   'operations-backoffice': {
-    role: 'Frontend Developer',
-    company: 'Financial & Operations Backoffice',
-    period: '2022 – 2023',
-    title: 'Operations with context.',
-    category: 'INTERNAL TOOLS · BACK OFFICE',
+    period: 'Oct 2023 – Aug 2024',
+    title: 'Bulk payments and accounting operations',
+    category: 'Payments and back office',
     summary:
-      'Internal tools and dashboards for accounting teams, with a focus on making information and operational workflows easier to understand.',
+      'I built dashboards for a bulk payments platform and its accounting back office. Teams could filter by company and review completed, pending, and rejected transactions.',
     concepts: [
       'Dashboards',
-      'Redux Toolkit',
-      'Ant Design',
-      'Technical documentation',
+      'Accessibility',
+      'Frontend testing',
+      'Backend for Frontend',
     ],
-    highlights: [
-      'Analytical dashboards',
-      'Operational workflows',
-      'Internal design systems',
-    ],
+    result:
+      'Support complaints fell by 30% after accessibility improvements. Frontend test coverage exceeded 85%.',
   },
-  'angular-learning': {
-    role: 'Frontend Architecture / R&D',
-    company: 'Technical Specialization',
-    period: '2024',
-    title: 'Exploring a different mental model.',
-    category: 'LEARNING · ANGULAR',
+  kala: {
+    period: 'Aug 2022 – Oct 2023',
+    title: 'Complex financial forms',
+    category: 'Financial interfaces',
     summary:
-      'Hands-on learning with modern Angular, including services, dependency injection, signals and consuming APIs.',
-    concepts: ['Signals', 'RxJS', 'Dependency injection', 'HttpClient'],
-    highlights: [
-      'Signals and reactivity',
-      'Dependency injection',
-      'Decoupled services',
-    ],
+      'I built and optimized forms with up to 180 fields, including complex components, file uploads, and image capture. We agreed with Design to use the same Ant Design components in Figma and the frontend.',
+    concepts: ['Complex forms', 'Reusable components', 'Response caching'],
+    result:
+      'The development and testing cycle through QA for these forms dropped from three weeks to one.',
+  },
+  mendel: {
+    period: 'Oct 2020 – Aug 2022',
+    title: 'Corporate expenses and receipt processing',
+    category: 'Corporate expenses',
+    summary:
+      'I built dashboards to review expenses by service and period, interfaces for configuring card limits, and receipt validation flows for back-office teams.',
+    concepts: ['Dashboards', 'Receipt processing', 'Real-time notifications'],
+    result: 'Back-office processing times fell by 35%.',
   },
 } satisfies Record<
   (typeof experiences)[number]['slug'],
   Pick<
     WorkExperience,
-    | 'role'
-    | 'company'
-    | 'period'
-    | 'title'
-    | 'category'
-    | 'summary'
-    | 'concepts'
-    | 'highlights'
+    'period' | 'title' | 'category' | 'summary' | 'concepts' | 'result'
   >
 >;
 

@@ -1,0 +1,7 @@
+## Gastos, tarjetas y facturación
+
+Implementé pantallas para configurar límites de monto, períodos y lugares de uso de tarjetas. En el backoffice trabajé en el procesamiento de comprobantes, la asignación de estados, el seguimiento de requisitos de facturación según el país de consumo y el registro de gastos para balances y métricas.
+
+## Seguimiento en tiempo real
+
+Usamos Socket.IO para notificar al backoffice cuando llegaba un comprobante o ticket de pago para procesar y validar. Desde el backoffice, los clientes recibían actualizaciones sobre el último ticket cargado para saber si había sido validado, seguía pendiente o había fallado la validación.

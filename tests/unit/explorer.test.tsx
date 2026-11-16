@@ -18,14 +18,14 @@ it('filters, announces empty results and recovers by clearing filters', async ()
   await user.click(screen.getByRole('button', { name: 'Angular' }));
   expect(screen.getByRole('status')).toHaveTextContent('1 experiencia');
   expect(
-    screen.getByRole('link', { name: /Explorar otro/ }),
+    screen.getByRole('link', { name: /Gestión de gastos/ }),
   ).toBeInTheDocument();
   await user.type(screen.getByRole('searchbox'), 'checkout');
   expect(screen.getByRole('status')).toHaveTextContent('0 experiencias');
   expect(screen.getByText('checkout')).toBeInTheDocument();
   expect(screen.getByText('Angular', { selector: 'dd' })).toBeInTheDocument();
   await user.click(screen.getByRole('button', { name: 'Limpiar filtros' }));
-  expect(screen.getByRole('status')).toHaveTextContent('3 experiencias');
+  expect(screen.getByRole('status')).toHaveTextContent('4 experiencias');
   expect(screen.getByRole('searchbox')).toHaveValue('');
   expect(screen.getByRole('searchbox')).toHaveFocus();
 });

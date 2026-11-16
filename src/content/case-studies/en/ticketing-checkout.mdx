@@ -1,26 +1,11 @@
-## Context confirmed by the owner
+## Rendering and purchase state
 
-Experience with a Next.js ticketing platform covering event selection, cart, confirmation and checkout. The work involved forms, purchase rules and API integration.
+We used SSR for the homepage, event listings, and seat selection where applicable. The server delivered the initial view with prices, availability, and dates. In the browser, Zustand held the temporary selection and updated displayed prices and discounts.
 
-## The engineering problem
+After selecting tickets, users could sign in and continue to checkout. The server verified the session and confirmed availability, the final amount, cart expiration, and payment status.
 
-A transactional flow connects product decisions, remote state and navigation. This case will describe how those responsibilities were coordinated. The implementation and its scope require further evidence.
+## Checkout rules
 
-## Decisions to document
-
-- **Cart state:** identify the source of truth and how synchronization worked.
-- **Forms:** provide examples of validation and business rules without customer data.
-- **Navigation:** document what happened when someone left or resumed checkout.
-- **Contracts:** include a sequence diagram and an anonymized contract if permitted.
-
-## Trade-offs to examine
-
-Centralizing state can simplify coordination while increasing coupling. Keeping rules close to each feature reduces dependencies and requires clear contracts. These are questions to investigate as the case study develops.
-
-## Outcome
-
-**Documentation pending.** Publishing metrics, conversion improvements or performance outcomes requires a verifiable source.
-
-## Evidence pending
-
-A repository or authorized excerpts, dates, personal responsibilities, the team's scope and anonymized screenshots.
+- I worked on handling delays in payment provider confirmations. Each user could have one active cart, locked against editing and starting another purchase until the payment resolved or the cart expired.
+- I implemented forms for club members, including discounts and zero-price tickets. I also contributed to the box-office flow, which followed its own rules.
+- I mentored three junior developers and worked with GitHub Actions for CI/CD.

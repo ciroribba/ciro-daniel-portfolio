@@ -63,16 +63,24 @@ export function Home({ locale }: { locale: Locale }) {
           </dl>
         </div>
       </section>
-      <section className="home-projects home-experience" aria-labelledby="featured-experience">
+      <section
+        className="home-projects home-experience"
+        aria-labelledby="featured-experience"
+      >
         <div className="section-heading">
           <h2 id="featured-experience">{copy.practiceTitle}</h2>
-          <Link className="text-link" href={localizedPath(locale, '/experience')}>
+          <Link
+            className="text-link"
+            href={localizedPath(locale, '/experience')}
+          >
             {copy.allProjects} <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </div>
         <div className="project-list experience-list">
           {getExperiences(locale)
-            .slice(0, 2)
+            .filter(
+              ({ slug }) => slug === 'ticketing-checkout' || slug === 'kala',
+            )
             .map((item) => (
               <ExperienceCard
                 key={item.slug}

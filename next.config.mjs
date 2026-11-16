@@ -15,6 +15,16 @@ export default withMDX({
         async redirects() {
           return [
             {
+              source: '/experience/angular-learning',
+              destination: '/technology',
+              permanent: true,
+            },
+            {
+              source: '/en/experience/angular-learning',
+              destination: '/en/technology',
+              permanent: true,
+            },
+            {
               source: '/projects',
               destination: '/experience',
               permanent: true,

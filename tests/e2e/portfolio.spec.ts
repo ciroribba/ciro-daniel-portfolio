@@ -36,11 +36,11 @@ test('technology filter and case navigation', async ({ page }) => {
   await page.goto('/technology/');
   await page.getByRole('button', { name: 'Angular', exact: true }).click();
   await expect(page.getByRole('status')).toHaveText('1 experiencia');
-  await page.getByRole('link', { name: /Explorar otro modelo mental/ }).click();
-  await expect(page).toHaveURL(/angular-learning/);
-  await expect(
-    page.getByRole('heading', { name: 'Evidencia pendiente' }),
-  ).toBeVisible();
+  await page
+    .getByRole('link', { name: /Gestión de gastos corporativos/ })
+    .click();
+  await expect(page).toHaveURL(/mendel/);
+  await expect(page.getByRole('heading', { name: 'Resultados' })).toBeVisible();
 });
 test('theme persists after navigation and reload', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'light' });
@@ -106,27 +106,22 @@ test('unknown route has a return path', async ({ page }) => {
 test('switches languages on a case and preserves the URL on reload', async ({
   page,
 }) => {
-  await page.goto('/experience/angular-learning/');
+  await page.goto('/experience/mendel/');
   await expect(page.locator('html')).toHaveAttribute('lang', 'es');
   const english = page.getByRole('link', { name: 'English', exact: true });
-  await expect(english).toHaveAttribute(
-    'href',
-    '/en/experience/angular-learning/',
-  );
+  await expect(english).toHaveAttribute('href', '/en/experience/mendel/');
   await english.focus();
   await page.keyboard.press('Enter');
-  await expect(page).toHaveURL(/\/en\/experience\/angular-learning\/$/);
+  await expect(page).toHaveURL(/\/en\/experience\/mendel\/$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-  await expect(
-    page.getByRole('heading', { name: 'Evidence pending' }),
-  ).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Results' })).toBeVisible();
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     'href',
-    /\/en\/experience\/angular-learning\/$/,
+    /\/en\/experience\/mendel\/$/,
   );
   await expect(page.locator('link[hreflang="es"]')).toHaveAttribute(
     'href',
-    /\/experience\/angular-learning\/$/,
+    /\/experience\/mendel\/$/,
   );
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
@@ -135,9 +130,7 @@ test('switches languages on a case and preserves the URL on reload', async ({
   ).toHaveAttribute('href', '/en/experience/');
   await page.getByRole('link', { name: 'Español', exact: true }).click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'es');
-  await expect(
-    page.getByRole('heading', { name: 'Evidencia pendiente' }),
-  ).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Resultados' })).toBeVisible();
 });
 
 test('English filters use English copy and open English cases', async ({
@@ -146,11 +139,13 @@ test('English filters use English copy and open English cases', async ({
   await page.goto('/en/technology/');
   await page
     .getByRole('searchbox', { name: 'Search by role, technology or context' })
-    .fill('dependency injection');
+    .fill('receipt processing');
   await expect(page.getByRole('status')).toHaveText('1 experience');
   await expect(
-    page.getByRole('link', { name: /Exploring a different mental model/ }),
-  ).toHaveAttribute('href', '/en/experience/angular-learning/');
+    page.getByRole('link', {
+      name: /Corporate expenses and receipt processing/,
+    }),
+  ).toHaveAttribute('href', '/en/experience/mendel/');
 });
 
 test('the language switch works without JavaScript', async ({

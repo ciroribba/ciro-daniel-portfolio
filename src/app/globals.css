@@ -627,6 +627,13 @@ em {
   color: var(--muted-foreground);
   margin-bottom: 14px;
 }
+.experience-results h2 {
+  margin-top: 0;
+}
+.experience-results p:not(.eyebrow) {
+  margin-bottom: 0;
+  font-size: 15px;
+}
 .back-link {
   margin-top: 40px;
 }

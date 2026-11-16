@@ -28,11 +28,12 @@ export function ExperienceCard({
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </Heading>
-        <p className="project-summary experience-summary">{experience.summary}</p>
+        <p className="project-summary experience-summary">
+          {experience.summary}
+        </p>
       </div>
       <div className="project-meta experience-meta">
-        <p className="project-kind experience-kind">{copy[experience.kind]}</p>
-        <p className="project-evidence experience-evidence">{copy[experience.evidence]}</p>
+        <p className="project-kind experience-kind">{experience.category}</p>
         <ul className="tags" aria-label={copy.technologies}>
           {experience.technologies.map((technology) => (
             <li key={technology}>{technology}</li>

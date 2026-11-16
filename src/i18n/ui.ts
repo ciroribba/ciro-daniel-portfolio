@@ -96,12 +96,7 @@ const es = {
   },
   caseStudy: {
     back: '← Toda la experiencia',
-    status: 'ESTADO DE LA EXPERIENCIA',
-    title: 'En documentación',
-    source:
-      'Basado en la trayectoria profesional del titular. No constituye una auditoría independiente.',
-    pending:
-      'Organización, fechas, repositorio y métricas: pendientes de confirmar.',
+    results: 'Resultados',
   },
   error: {
     title: 'No pudimos cargar esta página.',
@@ -213,12 +208,7 @@ const en = {
   },
   caseStudy: {
     back: '← All experience',
-    status: 'EXPERIENCE STATUS',
-    title: 'Documentation in progress',
-    source:
-      'Based on the owner’s professional background. This case study has yet to undergo an independent audit.',
-    pending:
-      'Organization, dates, repository and metrics are pending confirmation.',
+    results: 'Results',
   },
   error: {
     title: 'We couldn’t load this page.',

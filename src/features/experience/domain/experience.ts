@@ -18,7 +18,7 @@ export interface WorkExperience {
   title: string;
   category: string;
   summary: string;
-  technologies: readonly Technology[];
+  technologies: readonly string[];
   concepts: readonly string[];
   highlights?: readonly string[];
   evidence: 'self-reported' | 'repository-verified';

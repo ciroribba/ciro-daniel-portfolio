@@ -1,26 +1,11 @@
-## Contexto confirmado por el titular
+## Renderizado y estado de compra
 
-Experiencia con una plataforma de venta de entradas construida con Next.js: selección de evento, carrito, confirmación y checkout. Trabajo con formularios, reglas de compra e integración de APIs.
+Usamos SSR en la portada, el listado de eventos y la vista de selección de butacas cuando aplicaba. El servidor entregaba la vista inicial con precios, disponibilidad y fechas. En el navegador, Zustand mantenía la selección temporal y actualizaba los precios y descuentos visibles.
 
-## El problema de ingeniería
+Después de elegir las entradas, el usuario podía iniciar sesión y continuar con el checkout. El servidor verificaba la sesión y confirmaba la disponibilidad, el importe final, el vencimiento del carrito y el estado del pago.
 
-Un flujo transaccional conecta decisiones de producto, estado remoto y navegación. Este caso se prepara para explicar cómo se coordinaron esas responsabilidades. La implementación concreta y su alcance requieren evidencia adicional.
+## Reglas del checkout
 
-## Decisiones a documentar
-
-- **Estado del carrito:** completar cuál era su fuente de verdad y cómo se resolvía la sincronización.
-- **Formularios:** aportar ejemplos de validación y reglas de negocio, sin datos de clientes.
-- **Navegación:** documentar qué ocurría al abandonar o retomar el checkout.
-- **Contratos:** incorporar un diagrama de secuencia y un contrato anonimizado, si está permitido.
-
-## Trade-offs a contrastar
-
-Centralizar estado puede simplificar coordinación, pero aumenta el acoplamiento. Mantener reglas cerca de cada feature reduce dependencias, pero exige contratos claros. Estas son preguntas para completar el caso, no decisiones atribuidas al proyecto sin verificar.
-
-## Resultado
-
-**Pendiente de documentar.** No se publican métricas, mejoras de conversión ni resultados de rendimiento sin una fuente comprobable.
-
-## Evidencia pendiente
-
-Repositorio o fragmentos autorizados, fechas, responsabilidad personal, alcance del equipo y capturas anonimizadas.
+- Trabajé en el manejo de las demoras de confirmación de los proveedores de pago. Cada usuario podía tener un solo carrito activo, bloqueado para edición y para iniciar otra compra hasta que el pago se resolviera o el carrito venciera.
+- Implementé formularios para socios de clubes con descuentos y entradas de precio cero. También participé en el flujo de boletería, que tenía sus propias reglas.
+- Di mentoría a tres desarrolladores junior y trabajé con GitHub Actions para CI/CD.

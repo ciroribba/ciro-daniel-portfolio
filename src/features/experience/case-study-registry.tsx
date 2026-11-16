@@ -1,9 +1,11 @@
 import Ticketing from '@/content/case-studies/ticketing-checkout.mdx';
 import Operations from '@/content/case-studies/operations-backoffice.mdx';
-import Angular from '@/content/case-studies/angular-learning.mdx';
+import Kala from '@/content/case-studies/kala.mdx';
+import Mendel from '@/content/case-studies/mendel.mdx';
 import EnglishTicketing from '@/content/case-studies/en/ticketing-checkout.mdx';
 import EnglishOperations from '@/content/case-studies/en/operations-backoffice.mdx';
-import EnglishAngular from '@/content/case-studies/en/angular-learning.mdx';
+import EnglishKala from '@/content/case-studies/en/kala.mdx';
+import EnglishMendel from '@/content/case-studies/en/mendel.mdx';
 import type { experiences } from '@/content/experience';
 import type { Locale } from '@/i18n/routing';
 
@@ -11,7 +13,8 @@ import type { Locale } from '@/i18n/routing';
 const caseStudies = {
   'ticketing-checkout': { es: <Ticketing />, en: <EnglishTicketing /> },
   'operations-backoffice': { es: <Operations />, en: <EnglishOperations /> },
-  'angular-learning': { es: <Angular />, en: <EnglishAngular /> },
+  kala: { es: <Kala />, en: <EnglishKala /> },
+  mendel: { es: <Mendel />, en: <EnglishMendel /> },
 } satisfies Record<
   (typeof experiences)[number]['slug'],
   Record<Locale, React.ReactElement>
