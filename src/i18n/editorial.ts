@@ -21,7 +21,7 @@ const es = {
     labLink: 'Entrar al laboratorio',
   },
   about: {
-    monogram: 'INGENIERÍA / PRODUCTO / CURIOSIDAD',
+    portraitAlt: 'Retrato de Ciro Zeballo Ribba',
     interfaceTitle: 'La interfaz es el punto de encuentro.',
     experience:
       'Mi experiencia incluye aplicaciones con React, Next.js y TypeScript, dashboards, backoffices y flujos de compra de entradas. Me interesa entender tanto la experiencia de quien usa el producto como las decisiones que permiten mantenerlo.',
@@ -161,7 +161,7 @@ const en = {
     labLink: 'Visit the lab',
   },
   about: {
-    monogram: 'ENGINEERING / PRODUCT / CURIOSITY',
+    portraitAlt: 'Portrait of Ciro Zeballo Ribba',
     interfaceTitle: 'The interface is where it all comes together.',
     experience:
       'My experience includes React, Next.js and TypeScript applications, dashboards, back-office tools and ticket purchase flows. I care about how people use a product and the decisions that make it maintainable.',

@@ -1,4 +1,5 @@
 import { type Locale } from '@/i18n/routing';
+import Image from 'next/image';
 import { editorial } from '@/i18n/editorial';
 import { ui } from '@/i18n/ui';
 import { ArrowUpRight } from 'lucide-react';
@@ -15,10 +16,14 @@ export function About({ locale }: { locale: Locale }) {
         description={copy.description}
       />
       <div className="about-grid">
-        <div className="monogram" aria-hidden="true">
-          cr<span>.</span>
-          <small>{copy.monogram}</small>
-        </div>
+        <Image
+          className="about-portrait"
+          src="/images/ciro-ribba.webp"
+          alt={copy.portraitAlt}
+          width={900}
+          height={900}
+          unoptimized
+        />
         <div className="prose">
           <h2>{copy.interfaceTitle}</h2>
           <p>{copy.experience}</p>

@@ -568,30 +568,12 @@ em {
   gap: 80px;
   padding-bottom: 80px;
 }
-.monogram {
+.about-portrait {
+  width: 100%;
+  height: auto;
+  align-self: start;
   border-radius: var(--radius);
-  background: var(--muted);
   border: 1px solid var(--border);
-  min-height: 400px;
-  max-height: 470px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  font-family: var(--font-sans);
-  font-size: 170px;
-  line-height: 1;
-  letter-spacing: -16px;
-}
-.monogram span {
-  color: var(--primary);
-}
-.monogram small {
-  position: absolute;
-  bottom: 25px;
-  letter-spacing: 0.12em;
-  font-size: 8px;
-  font-family: var(--font-mono);
 }
 .prose {
   max-width: 760px;
@@ -993,9 +975,9 @@ em {
   .future-study {
     padding: 25px;
   }
-  .monogram {
-    min-height: 290px;
-    font-size: 140px;
+  .about-portrait {
+    width: min(100%, 20rem);
+    justify-self: center;
   }
   .about-grid {
     padding-bottom: 48px;
