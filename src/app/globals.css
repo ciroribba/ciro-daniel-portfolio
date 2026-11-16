@@ -422,6 +422,29 @@ em {
   color: var(--muted-foreground);
   max-width: 68ch;
 }
+.technology-overview {
+  margin-bottom: 32px;
+}
+.technology-overview > h2 {
+  margin-bottom: 16px;
+}
+.technology-stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 12px;
+}
+.technology-stack article {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+.technology-stack h3 {
+  font-size: 1rem;
+}
+.technology-stack .tags li {
+  font-size: 12px;
+}
 .explorer-controls {
   display: flex;
   flex-wrap: wrap;

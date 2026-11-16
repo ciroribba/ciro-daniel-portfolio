@@ -27,9 +27,8 @@ export function Engineering({ locale }: { locale: Locale }) {
           <p className="aside-note">{copy.principlesNote}</p>
         </aside>
       </div>
-      <section className="section">
-        <p className="eyebrow">{copy.docs}</p>
-        <h2>{copy.docsTitle}</h2>
+      <section className="section" aria-labelledby="feature-workflow">
+        <h2 id="feature-workflow">{copy.docsTitle}</h2>
         <div className="three-columns">
           <article>
             <h3>{copy.before}</h3>

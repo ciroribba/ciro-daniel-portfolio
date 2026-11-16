@@ -55,17 +55,16 @@ const es = {
   engineering: {
     principlesNote:
       'Principios de trabajo. Cada caso requiere contrastarlos con sus restricciones y su contexto.',
-    docs: 'DOCUMENTACIÓN COMO PARTE DEL PRODUCTO',
-    docsTitle: 'Una decisión que se puede revisar.',
-    before: 'Antes de construir',
+    docsTitle: 'Cómo trabajo en una funcionalidad',
+    before: 'Refinar el requerimiento',
     beforeDescription:
-      'Problema, actores, reglas de negocio, contratos de API y criterios de aceptación.',
-    during: 'Durante la implementación',
+      'Participo en sesiones de refinamiento con las personas involucradas para acordar el alcance, las reglas de negocio y los casos límite. En Jira, uso escenarios Gherkin (Dado / Cuando / Entonces) para describir el comportamiento esperado.',
+    during: 'Documentar y acordar la integración',
     duringDescription:
-      'Flujos por feature, alternativas y ADR breves. Estados de carga, error y recuperación.',
-    delivery: 'Al entregar',
+      'Escribo especificaciones técnicas por funcionalidad en Markdown dentro de Atlassian. Uso diagramas UML en draw.io o Excalidraw para explicar flujos y coordino los contratos de API con Backend mediante documentación y Swagger.',
+    delivery: 'Preparar la validación',
     deliveryDescription:
-      'Escenarios de QA, validaciones ejecutadas, riesgos y próximos pasos.',
+      'Dejo en las historias de Jira los casos que QA debe verificar. Desarrollo y QA comparten los criterios de aceptación y los casos límite para comprobar el mismo comportamiento.',
     cases: 'Explorar trayectoria y casos',
     principles: [
       [
@@ -133,8 +132,19 @@ const es = {
     eyebrow: 'TECHNOLOGY EXPLORER',
     title: 'Más allá de una lista de tecnologías.',
     description:
-      'Explorá la relación entre herramientas, conceptos y casos. Elegí una tecnología para ver dónde aparece y qué temas conecta.',
+      'Conocé mi stack de trabajo y explorá cómo apliqué estas herramientas en distintos proyectos.',
     metadataTitle: 'Explorador de tecnologías',
+    stackTitle: 'Mi stack de trabajo',
+    experienceTitle: 'Tecnologías en la práctica',
+    labLink: 'Explorar el Lab de datos e IA',
+    groups: {
+      frontend: 'Frontend y lenguajes web',
+      interface: 'UI y visualización',
+      state: 'Estado y datos remotos',
+      forms: 'Formularios y validación',
+      backend: 'Backend y diagnóstico HTTP',
+      data: 'Datos y machine learning',
+    },
   },
 };
 
@@ -195,17 +205,16 @@ const en = {
   engineering: {
     principlesNote:
       'These are working principles. Each case has its own context and constraints.',
-    docs: 'DOCUMENTATION AS PART OF THE PRODUCT',
-    docsTitle: 'A decision you can revisit.',
-    before: 'Before building',
+    docsTitle: 'How I work on a feature',
+    before: 'Refine the requirements',
     beforeDescription:
-      'Problem, actors, business rules, API contracts and acceptance criteria.',
-    during: 'During implementation',
+      'I take part in refinement sessions with stakeholders to agree on scope, business rules, and edge cases. In Jira, I use Gherkin scenarios (Given / When / Then) to describe expected behavior.',
+    during: 'Document and agree on integration',
     duringDescription:
-      'Feature flows, alternatives and short ADRs. Loading, error and recovery states.',
-    delivery: 'At handoff',
+      'I write feature-level technical specifications in Markdown in Atlassian. I use UML diagrams in draw.io or Excalidraw to explain flows and coordinate API contracts with backend engineers through documentation and Swagger.',
+    delivery: 'Prepare for QA',
     deliveryDescription:
-      'QA scenarios, completed checks, risks and next steps.',
+      'I document the cases QA should verify in Jira stories. Engineering and QA share acceptance criteria and edge cases so both can verify the same behavior.',
     cases: 'Explore professional experience',
     principles: [
       [
@@ -273,8 +282,19 @@ const en = {
     eyebrow: 'TECHNOLOGY EXPLORER',
     title: 'Beyond a list of technologies.',
     description:
-      'Explore the relationship between tools, concepts and cases. Choose a technology to see where it appears and which topics it connects.',
+      'Browse my working stack and see how I used these tools across projects.',
     metadataTitle: 'Technology Explorer',
+    stackTitle: 'My working stack',
+    experienceTitle: 'Tools in practice',
+    labLink: 'Explore the Data & AI Lab',
+    groups: {
+      frontend: 'Frontend and web languages',
+      interface: 'UI and visualization',
+      state: 'State and remote data',
+      forms: 'Forms and validation',
+      backend: 'Backend and HTTP diagnostics',
+      data: 'Data and machine learning',
+    },
   },
 } satisfies typeof es;
 

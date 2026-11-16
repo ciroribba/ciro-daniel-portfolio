@@ -1,0 +1,31 @@
+export const technologyStack = {
+  frontend: [
+    'Angular',
+    'React',
+    'Next.js',
+    'TypeScript',
+    'JavaScript',
+    'HTML',
+    'CSS',
+  ],
+  interface: [
+    'Material UI',
+    'Bootstrap',
+    'Tailwind CSS',
+    'Ant Design',
+    'NG-Zorro',
+    'daisyUI',
+    'shadcn/ui',
+    'Ant Design Charts',
+  ],
+  state: [
+    'React Redux',
+    'Redux Toolkit',
+    'Redux DevTools',
+    'Zustand',
+    'TanStack Query',
+  ],
+  forms: ['React Hook Form', 'Formik', 'Zod'],
+  backend: ['Node.js', 'Express', 'PostgreSQL', 'Burp Suite'],
+  data: ['Python'],
+} as const;
