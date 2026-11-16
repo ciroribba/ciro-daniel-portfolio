@@ -6,6 +6,7 @@ export const sections = [
   '/',
   '/engineering',
   '/experience',
+  '/demos',
   '/technology',
   '/credentials',
   '/lab',

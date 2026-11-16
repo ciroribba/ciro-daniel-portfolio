@@ -1,4 +1,5 @@
 import { localizedPath, type Locale } from '@/i18n/routing';
+import { demoCopy } from '@/i18n/demos';
 import { editorial } from '@/i18n/editorial';
 import { ui } from '@/i18n/ui';
 import Link from 'next/link';
@@ -11,6 +12,7 @@ import { getExperiences } from '@/content/experience';
 
 export function Home({ locale }: { locale: Locale }) {
   const copy = editorial[locale].home;
+  const demos = demoCopy[locale];
   return (
     <>
       <section className="hero">
@@ -18,12 +20,24 @@ export function Home({ locale }: { locale: Locale }) {
           <p className="eyebrow">{profile.name}</p>
           <h1>{profile.role}</h1>
           <p className="hero-copy">{copy.heroDescription}</p>
+        </div>
+        <section className="home-demos" aria-labelledby="featured-demos">
+          <h2 id="featured-demos">{demos.title}</h2>
+          <p className="lede">{demos.homeDescription}</p>
+          <Button asChild>
+            <Link href={localizedPath(locale, '/demos')}>
+              {demos.browse} <ArrowRight size={16} aria-hidden="true" />
+            </Link>
+          </Button>
+        </section>
+        <div>
           <div className="hero-actions">
-            <Button asChild>
-              <Link href={localizedPath(locale, '/experience')}>
-                {copy.explore} <ArrowRight size={16} aria-hidden="true" />
-              </Link>
-            </Button>
+            <Link
+              className="text-link"
+              href={localizedPath(locale, '/experience')}
+            >
+              {copy.explore} <ArrowRight size={16} aria-hidden="true" />
+            </Link>
             <Link
               className="text-link"
               href={localizedPath(locale, '/engineering')}
@@ -31,23 +45,23 @@ export function Home({ locale }: { locale: Locale }) {
               {copy.engineering} <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </div>
+          <dl className="hero-details">
+            <div>
+              <dt>{copy.ecosystem}</dt>
+              <dd>
+                <ul className="tags">
+                  {technologies.map((technology) => (
+                    <li key={technology}>{technology}</li>
+                  ))}
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>{copy.location}</dt>
+              <dd>{profile.location}</dd>
+            </div>
+          </dl>
         </div>
-        <dl className="hero-details">
-          <div>
-            <dt>{copy.ecosystem}</dt>
-            <dd>
-              <ul className="tags">
-                {technologies.map((technology) => (
-                  <li key={technology}>{technology}</li>
-                ))}
-              </ul>
-            </dd>
-          </div>
-          <div>
-            <dt>{copy.location}</dt>
-            <dd>{profile.location}</dd>
-          </div>
-        </dl>
       </section>
       <section className="home-projects home-experience" aria-labelledby="featured-experience">
         <div className="section-heading">
